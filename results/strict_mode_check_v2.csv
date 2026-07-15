@@ -1,0 +1,5 @@
+dataset,horizon_h,Persistence,Climatology,LinearRegression,MLP,LSTM,GRU,strongest_bench,best_net,delta_Persistence,delta_Climatology,delta_LinearRegression,delta_MLP,delta_LSTM,delta_GRU,GRUvsLR_DM,GRUvsLR_pHLN,GRUvsLR_pboot
+kelmarsh,1,11.8812,33.4813,11.5818,11.7718,11.6641,11.7347,LinearRegression,LSTM,0.0,0.0,-0.0,-0.103,-0.031,0.028,,,
+kelmarsh,24,37.8834,33.5553,30.8868,31.6833,31.4421,31.1774,LinearRegression,GRU,-0.0,0.0,0.0,0.161,-0.006,0.099,,,
+penmanshiel,1,11.582,35.3736,11.5371,11.6556,11.4795,11.5019,LinearRegression,LSTM,-0.0,-0.0,0.0,-0.053,-0.18,-0.065,-1.38,0.1679,0.1294
+penmanshiel,24,42.5951,35.3172,35.8659,36.2025,36.406,35.934,Climatology,GRU,0.0,-0.0,0.0,-0.636,-0.816,-0.179,,,
