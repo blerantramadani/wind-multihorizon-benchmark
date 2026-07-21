@@ -4,8 +4,7 @@ Companion code and results for the paper:
 
 > **A Cautionary Framework for Multi-Horizon Wind Power Forecasting: Shifting Benchmark Hierarchies at the Single-Turbine Scale**
 > Blerant Ramadani, Vangel Fustic, 
-> *Eng* (MDPI), Special Issue "Advances in AI-Enabled Integrated Renewable Energy Systems, Smart Grids and Their Applications", 2026 (under review).
-
+> *Energies* (MDPI), Solar and Wind Forecasting
 ## What this study does
 
 We forecast the output of single-turbine wind power from 1 to 48 hours ahead using operational SCADA data from two UK wind farms (Kelmarsh WT1 and Penmanshiel WT01) and compare five learning architectures - MLP, LSTM, GRU, DLinear and PatchTST - with a full hierarchy of non-learning references: naive persistence, seasonal persistence, hour-of-day climatology, feature-based linear regression. Each model is trained with 10 random seeds at nine horizons and every comparison is validated using a stationary bootstrap (primary test) and Diebold-Mariano tests under the Harvey-Leybourne-Newbold correction.
