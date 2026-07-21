@@ -108,7 +108,7 @@ updated upon publication):
   author  = {Ramadani, Blerant and Fustic, Vangel},
   title   = {A Cautionary Framework for Multi-Horizon Wind Power Forecasting:
              Shifting Benchmark Hierarchies at the Single-Turbine Scale},
-  journal = {Eng},
+  journal = {Energies},
   year    = {2026},
   note    = {under review}
 }
