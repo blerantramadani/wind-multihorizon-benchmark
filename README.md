@@ -2,7 +2,7 @@
 
 Companion code and results for the paper:
 
-> **A Cautionary Framework for Multi-Horizon Wind Power Forecasting: Shifting Benchmark Hierarchies at the Single-Turbine Scale**
+> **Shifting Benchmark Hierarchies in Multi-Horizon Wind Power Forecasting: An Evaluation Framework and Horizon-Specific Decision Rule at the Single-Turbine Scale**
 > Blerant Ramadani, Vangel Fustic, 
 > *Energies* (MDPI), Solar and Wind Forecasting
 ## What this study does
@@ -106,8 +106,7 @@ updated upon publication):
 ```bibtex
 @article{ramadani2026cautionary,
   author  = {Ramadani, Blerant and Fustic, Vangel},
-  title   = {A Cautionary Framework for Multi-Horizon Wind Power Forecasting:
-             Shifting Benchmark Hierarchies at the Single-Turbine Scale},
+  title   = {Shifting Benchmark Hierarchies in Multi-Horizon Wind Power Forecasting: An Evaluation Framework and Horizon-Specific Decision Rule at the Single-Turbine Scale},
   journal = {Energies},
   year    = {2026},
   note    = {under review}
