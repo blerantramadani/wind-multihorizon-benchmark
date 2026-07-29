@@ -60,7 +60,7 @@ Run in order:
 python3 scripts/01_pipeline_corrected.py     # trains all models, writes summary + DM tests
 python3 scripts/02_bootstrap_dm.py           # moving-block bootstrap on saved predictions
 python3 scripts/03_ensemble_fragility.py     # seed-composition sensitivity of the DM statistic
-python3 scripts/04_make_figures.py           # figures
+
 ```
 
 Step 1 is the only expensive step (five architectures x nine horizons x ten
