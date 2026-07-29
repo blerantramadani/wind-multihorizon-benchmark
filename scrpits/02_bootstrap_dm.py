@@ -1,36 +1,3 @@
-#!/usr/bin/env python3
-"""
-================================================================================
-02 — BOOTSTRAP DIEBOLD-MARIANO (post-hoc, mbi parashikimet e ruajtura)
-================================================================================
-Projekt: Journal indexed paper 1st (Paper 1 -> Q1) + verifikim Paper 2
-
-Zbaton këshillën e recensentit/profesorit: verifikim shtesë i stabilitetit të
-DM-testeve me moving-block bootstrap (default 1000 resamples), i cili nuk
-mbështetet në supozimet asimptotike të HLN dhe respekton autokorrelacionin e
-diferencialit të humbjeve përmes blloqeve.
-
-METODA:
-  d_t = e1_t^2 - e2_t^2 ;  t_obs = DM-stat HLN mbi d.
-  Nën H0 qendërzohet d (d - dbar) dhe rindërtohen seri me blloqe rrethore
-  me gjatësi L = max(2h, 10). p_boot = fraksioni |t*| >= |t_obs|.
-  Raportohen krah për krah: p_HLN (asimptotik) dhe p_boot.
-
-INPUT : results/preds_{dataset}_h{H}_{mode}_{filt|nofilt}.csv  (nga skripti 01)
-OUTPUT: results/02_bootstrap_dm.csv
-
-PËRDORIMI:
-  python3 scripts/02_bootstrap_dm.py                # 1000 resamples, të gjitha preds
-  python3 scripts/02_bootstrap_dm.py --n-boot 5000  # më i saktë, më i ngadaltë
-
-Krahasimet për çdo skedar parashikimesh:
-  - çdo model ML (kolonat *_avg) vs benchmark-u më i fortë jo-ML
-  - LSTM vs MLP (pyetja e recurrence)
-  - corrected vs legacy për çdo model (nëse ekzistojnë të dy skedarët)
-
-Autor: B. Ramadani | Projekt Q1, korrik 2026
-================================================================================
-"""
 import os, re, glob, math, argparse
 import numpy as np
 import pandas as pd
