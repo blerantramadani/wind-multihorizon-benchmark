@@ -1,46 +1,4 @@
-#!/usr/bin/env python3
-"""
-================================================================================
-01 — PIPELINE I KORRIGJUAR (dy mode: legacy vs corrected)
-================================================================================
-Projekt: Journal indexed paper 1st (Paper 1 -> Q1) + verifikim Paper 2 (Energies)
 
-ÇFARË BËN:
-  Ekzekuton të njëjtin eksperiment në DY MODE paralele me seeds identike:
-
-    legacy    : feature 'ActivePower_lag1' (shift 1) — konstruksioni origjinal.
-                Rreshti i fundit i dritares mban P(t-2). (Handikapi i njohur.)
-    corrected : feature 'ActivePower_kW' i PAZHVENDOSUR në çdo rresht dritareje.
-                Rreshti i fundit mban P(t-1) — saktësisht ç'sheh persistence.
-                Pa leakage: çdo rresht j i dritares plotëson j <= i-1 < target.
-
-  Të dy modet aplikojnë FILTRIN E BOSHLLËQEVE: pranohen vetëm dritaret ku
-  intervali [fillimi i dritares ... targeti] është plotësisht i njëpasnjëshëm
-  (hap 1 orë). Kjo i bën të ndershëm edhe persistence/seasonal-persistence
-  (P "h orë para" është vërtet h orë para, jo matanë një boshllëku 255-orësh).
-
-  Diferenca legacy - corrected për çdo model/horizont/site raportohet si
-  "KOSTOJA E GABIMIT" me DM-test përkatës -> rezultat i matshëm për Paper 1 Q1.
-
-ARKITEKTURAT (kopjuar fjalë për fjalë nga multi_horizon_hq_v2.py — bit-identike):
-  MLP, LSTM, GRU, DLinear (Zeng et al. 2023), PatchTST (Nie et al. 2023)
-BENCHMARKS: Persistence, Seasonal persistence (t+h-24), Climatology, LinearRegression
-
-PËRDORIMI:
-  python3 scripts/01_pipeline_corrected.py                    # h=1,2,3 | 10 seeds | ~8-12 h
-  python3 scripts/01_pipeline_corrected.py --quick            # h=1     | 3 seeds  | ~1 h
-  python3 scripts/01_pipeline_corrected.py --horizons 1,6,24  # zgjedhje e lirë
-  python3 scripts/01_pipeline_corrected.py --mode corrected   # vetëm një mode
-
-OUTPUT:
-  results/01_summary.csv    të gjitha metrikat: site x horizont x mode x model
-  results/01_bug_cost.csv   legacy vs corrected për model: delta nRMSE + DM
-  results/01_dm_vs_bench.csv DM i çdo modeli ML vs benchmark-u më i fortë jo-ML
-
-Autor: B. Ramadani | Projekt Q1, korrik 2026 | Protokoll konsistent me
-multi_horizon_hq_v2.py (LOOK_BACK=48, EPOCHS=50, BATCH=32, TEST_HOURS=1000).
-================================================================================
-"""
 import os, math, time, argparse, warnings
 import numpy as np
 import pandas as pd
