@@ -126,7 +126,6 @@ seed-level variation, not exactly.
 }
 ```
 
-Archived release: [10.5281/zenodo.21472810](https://doi.org/10.5281/zenodo.21472810)
 
 ## License
 
