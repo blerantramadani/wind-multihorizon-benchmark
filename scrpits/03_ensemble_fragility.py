@@ -1,35 +1,3 @@
-#!/usr/bin/env python3
-"""
-================================================================================
-03 — BRISHTËSIA E ANSAMBLIT: sa i ndjeshëm është DM ndaj përbërjes së farave
-================================================================================
-Pse: DM-ja llogaritet mbi parashikimin e mesatarizuar (mp = mean(preds, axis=0)),
-ndërsa nRMSE_mean është mesatarja e rezultateve për farë. Ansambli lëviz më shumë
-se mesatarja e anëtarëve, ndaj DM mund të ndryshojë ndjeshëm edhe kur nRMSE mezi
-lëviz. Ky script e mat atë drejtpërdrejt, PA ritrajnuar asgjë.
-
-TRI DIAGNOSTIKA:
-  1) Jackknife (leave-one-seed-out): 10 ansamble me nga 9 fara.
-     KUJDES: ansambli 9-farësh është sistematikisht më i zhurmshëm se ai
-     10-farësh, ndaj një pjesë e çdo përkeqësimi vjen nga madhësia, jo nga
-     brishtësia. Prandaj ekziston diagnostika 3.
-  2) DM për farë individuale: shpërndarja e plotë, pa konfuzion madhësie.
-  3) Nën-mostrim i rastësishëm me madhësi k: izolon efektin e madhësisë së
-     ansamblit nga ai i përbërjes.
-
-VETË-VERIFIKIM: DM-ja e ansamblit të plotë krahasohet me vlerën e ruajtur në
-results/01_dm_vs_bench.csv. Nëse nuk përputhen, skedari i parashikimeve nuk i
-përket të njëjtit run — scripti ndalon.
-
-PËRDORIMI:
-  python3 scripts/03_ensemble_fragility.py                      # të 18 kombinimet
-  python3 scripts/03_ensemble_fragility.py --only penmanshiel:1 # një i vetëm
-  python3 scripts/03_ensemble_fragility.py --subsample 5 --draws 200
-
-OUTPUT:
-  results/03_ensemble_fragility.csv
-================================================================================
-"""
 import argparse
 import importlib.util
 import itertools
