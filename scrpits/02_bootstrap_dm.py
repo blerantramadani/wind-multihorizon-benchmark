@@ -5,7 +5,6 @@ from scipy import stats
 
 
 def hln_dm(d, h):
-    """DM-stat me korrigjim HLN mbi diferencialin d. Kthen (stat, p_asimptotik)."""
     T = len(d); dbar = d.mean()
     gamma0 = np.var(d, ddof=0)
     gammas = [np.cov(d[k:], d[:-k], ddof=0)[0, 1] for k in range(1, h)] if h > 1 else []
@@ -18,7 +17,6 @@ def hln_dm(d, h):
 
 
 def block_bootstrap_p(d, h, n_boot=1000, seed=0):
-    """Moving-block bootstrap nën H0 (d i qendërzuar). Kthen p_boot."""
     rng = np.random.default_rng(seed)
     T = len(d)
     L = max(2 * h, 10)
